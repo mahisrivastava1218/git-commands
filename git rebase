@@ -1,0 +1,23 @@
+git rebase is a Git command used to move or combine a sequence of commits to a new base commit.
+It's often used to:
+Clean up your commit history.
+Apply changes from one branch on top of another.
+Avoid merge commits and maintain a linear project history.
+
+✅ With Rebase (Cleaner History)
+git checkout feature/login-ui
+git fetch origin
+git rebase origin/main
+Now your commits are rebased onto the latest main:
+
+* Your commit 2
+* Your commit 1
+* Commit on main by teammate
+
+Your changes appear as if they were written on top of the latest main. 🔥
+
+Command	Use Case
+git rebase main	Rebase your work on top of the latest main
+git rebase -i HEAD~3	Clean up last 3 commits (squash, reword)
+git rebase --continue	Continue after resolving a conflict
+git rebase --abort	Cancel a rebase
